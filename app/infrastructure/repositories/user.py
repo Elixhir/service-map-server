@@ -21,3 +21,17 @@ class UserRepositoryImplementation(UserRepository):
             .first()
             is not None
         )
+    
+    def find_by_email(self, email: Email) -> User:
+        user_model = (
+            db.session.query(UserModel)
+            .filter_by(email=email.value)
+            .first()
+        )
+        if user_model is None:
+            return None
+        return User(
+            id=user_model.id,
+            email=Email(user_model.email),
+            password_hash=user_model.password_hash
+        )

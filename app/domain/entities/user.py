@@ -1,6 +1,4 @@
-from uuid import UUID, uuid4
 from app.domain.value_objects.email import Email
-from werkzeug.security import generate_password_hash
 
 class User:
     def __init__(
@@ -8,12 +6,12 @@ class User:
         email: Email,
         password_hash: str,
         is_active: bool = True,
-        user_id: UUID | None = None
+        id: str | None = None
     ):
         if not password_hash:
             raise ValueError("Password hash is required")
 
-        self.id = user_id or uuid4()
+        self.id = id
         self.email = email
         self.password_hash = password_hash
         self.is_active = is_active
