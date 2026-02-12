@@ -12,3 +12,5 @@ PyJWT==2.8.0
 
 # Leer variables de entorno
 python-dotenv==1.0.0
+
+gunicorn==21.2.0
