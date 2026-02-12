@@ -1,7 +1,14 @@
+# Framework
 Flask==2.3.3
+
+# ORM y migraciones
 Flask-SQLAlchemy==3.0.5
 Flask-Migrate==4.0.5
-psycopg2==2.9.7
+psycopg2-binary==2.9.7
+
+# Seguridad
 passlib[bcrypt]==1.7.4
 PyJWT==2.8.0
+
+# Leer variables de entorno
 python-dotenv==1.0.0
